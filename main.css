@@ -1,98 +1,115 @@
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-header .container {
+header, 
+section h2,
+section h3 {
+    font-family: "Tektur", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 40-;
+  } /* Aplicando Fonte */
+
+body {
+    font-family: "Tektur", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  } /* Aplicando Fonte */
+
+/* Inicio do header */
+header {
+    padding: 16px 0;
+    background-color: crimson;
+    color: white;
+}
+
+header nav li {
+    display: inline;
+    margin-left: 16px;
+    font-size: 18px;
+} header nav li a{
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+header .container,
+section .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
+} /* Confgiruando Header encina, e embaixo as seções do Section e tal. Vou deixar junto pra não confundir */ 
 
-body > header {
-    color: #fff;
-    background-color: rgb(54, 54, 54);
-    padding: 16px 0;
+section {
+    padding: 24px 0;
+} section .container {
+    align-items: flex-start;
+} section h2 {
+    margin-bottom: 16px;
+    color: crimson;
+} section p {
+    margin-bottom: 8px;
 }
+/* Fim do header */
 
-header li{
+/* Inicio do index */
+/* Area Sorbe */
+.brands-list img {
+    height: 24px;
+    margin-right: 8px;
+}
+.brands-list li {
     display: inline;
-    padding-left: 6px;
-    padding-right: 6px;
-    background-color: rgb(255, 255, 255);
-    padding: 8px;
-    border-radius: 16px;
 }
 
-header li a{
-    color: #000000;
+.store-front {
+    margin-right: 32px;
 }
 
-.container{
-    width: 1366px;
-    margin: 0 auto;    
+/* Area Contato */
+.social-links img {
+    height: 24px;
 }
 
-.articles{
+#contact .container {
+    display: block;
+}
+.contact-methods {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.articles article{
-    width: 30%;
+.social-links li {
+    display: inline;
+    margin-right: 8px;
+} .social-links li a{
+    text-decoration: none;
 }
 
-.articles article img{
-    height: 180px;
+form input,
+form textarea,
+form button {
+    display: block;
+    width: 320px;
+    margin-bottom: 8px;
+    padding: 8px;
 }
 
-.articles article p
-.articles article a{
-    font-family: Arial, Helvetica, sans-serif;
+form textarea {
+    resize: none;
 }
-
-section h2,
-.articles article{
-    margin-bottom: 16px;
-}
-
-.articles article h3{
-    font-size: 24px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-}    
-
-.articles article a{
-background-color: rgb(13, 251, 255);
-color: black;
-padding: 8px;
-border-radius: 16px;
-display: inline-block;
-text-decoration: none;
-}    
-
-.articles article a:hover{
-    text-decoration: underline;
-}
-
-section{ 
-    padding: 16px;
-}
-
-#esportes{
-    background-color: #a67f0080;
-}
-
-#economia{
-    background-color: #1aff0047;
-}
-
-#geografia{
-    background-color: #ff000047;
-}
-
-#historia{
-    background-color: #0048ff47;
-}
+/* Fim do index */
