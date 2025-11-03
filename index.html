@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade JS</title>
-    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="main.css"/>
 </head>
+
 <body>
     <div class="container">
-        <h1>EBAC Banking</h1>
-        <h2>Depósitos</h2>
-        <form id="form-deposito">
-            <input      id="nome-Beneficiario" type="text" required placeholder="Nome completo do beneficiário" />
-            <p class="error-message">
-                O nome precisa ta completo po
-            </p>
-            <input      id="numero-conta" type="number" required placeholder="Número da conta" />
-            <input      id="valor-deposito" type="number" required placeholder="Valor" />
-            <textarea   id="descricao" placeholder="Descrição (opcional)"></textarea>
-            <button     id="btn-depositar" type="submit">Depositar</button>
+        <h1>Validação Menor e Maior</h1>
+        <h2>Valores</h2>
+        <form id="form-valores">
+            <input id="valor-1" type="number" required placeholder="Coloca um valor ai vai: "/>
+            <input id="valor-2" type="number" required placeholder="Aqui tambem: "/>
+            <button id="btn-verificar" type="submit">Verificar</button>
         </form>
-            <p class="sucess-message">
+            <p class="message">
+            <p class="success-message"></p>
+            <p class="error-message"></p>    
         </p>
     </div>
 
 
     <script src="main.js"></script>
 </body>
+
 </html>

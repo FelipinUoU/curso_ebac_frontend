@@ -1,45 +1,36 @@
-const form = document.getElementById('form-deposito');
-const nomeBeneficiario = document.getElementById('nome-Beneficiario');
-let formValido = false;
+const form = document.getElementById('form-valores');
+let validaMaiorMenor = false;
 
-function validaNome(nomeCompleto){
-    const nomeComoArray = nomeCompleto.split(' ');
-    return nomeComoArray.length >= 2;
-}
-
-form.addEventListener('submit', function(e) { 
-
+form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const numeroContaBeneficiario = document.getElementById('numero-conta');
-    const valorDeposito = document.getElementById('valor-deposito');
-    const mensagemSucesso = `Valor de: <b>${valorDeposito.value}</b> depositado com sucesso na conta <b>${numeroContaBeneficiario.value}</b> do beneficiário <b>${nomeBeneficiario.value}</b>.`; 
+    const valor1 = document.getElementById('valor-1').value;
+    const valor2 = document.getElementById('valor-2').value;
+    const mensagemSucesso = `<b>${valor1}</b> é menor que <b>${valor2}</b>.`;
+    const mensagemErro = `<b>${valor1}</b> é maior que <b>${valor2}</b>.`;
 
-    formEValido = validaNome(nomeBeneficiario.value)
-    if (formEValido) {
-        const containerMensagemSucesso = document.querySelector('.mensagem-sucesso');
+
+    if (valor1 < valor2) {
+        const containerMensagemSucesso = document.querySelector('.message');
         containerMensagemSucesso.innerHTML = mensagemSucesso;
         containerMensagemSucesso.style.display = 'block';
 
-        valorDeposito.value = '';
-        nomeBeneficiario.value = '';
-        numeroContaBeneficiario.value = '';
-
+        const containerMensagemErro = document.querySelector('.error-message');
+        if (containerMensagemErro) {
+            containerMensagemErro.style.display = 'none';
+        }
     } else {
-        nomeBeneficiario.style.border = '1px solid red';
-        document.querySelector('.error-message').style.display = 'block';
-    }  
-})
+        const containerMensagemErro = document.querySelector('.message');
+        containerMensagemErro.innerHTML = mensagemErro;
+        containerMensagemErro.style.display = 'block';
 
-nomeBeneficiario.addEventListener('keyup', function(e) {
-    console.log(e.target.value);
-    formEValido = validaNome(e.target.value)
-
-        if (!formEValido) {
-        nomeBeneficiario.classList.add('error');
-        document.querySelector('.error-message').style.display = 'block';
-    } else {
-        nomeBeneficiario.classList.remove('error');
-        document.querySelector('.error-message').style.display = 'none';
-    }
-})
+        const containerMensagemSucesso = document.querySelector('.success-message');
+        if (containerMensagemSucesso) {
+            containerMensagemSucesso.style.display = 'none';
+        }
+    } if (valor1 == valor2) {   
+        const containerMensagemErro = document.querySelector('.message');
+        containerMensagemErro.innerHTML = 'Os valores são iguais.';
+        containerMensagemErro.style.display = 'block';
+    } 
+});
