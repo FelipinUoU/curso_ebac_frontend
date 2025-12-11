@@ -1,31 +1,51 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade JS</title>
-    <link rel="stylesheet" href="main.css"/>
+    <title>Calculadora de Média</title>
+
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
     <div class="container">
-        <h1>Validação Menor e Maior</h1>
-        <h2>Valores</h2>
-        <form id="form-valores">
-            <input id="valor-1" type="number" required placeholder="Coloca um valor ai vai: "/>
-            <input id="valor-2" type="number" required placeholder="Aqui tambem: "/>
-            <button id="btn-verificar" type="submit">Verificar</button>
+        <header>
+            <img src="images/logo.png" alt="Cepelo e Diploma">
+            <h1>Calculadora de Média</h1>
+        </header>
+
+        <form>
+            <input type="text" required placeholder="Nome da Atividade" />
+            <input type="number" required placeholder="Nota da Atividade" min="0" max="10" />
+            <button type="submit">Adicionar +</button>
         </form>
-            <p class="message">
-            <p class="success-message"></p>
-            <p class="error-message"></p>    
-        </p>
+
+        <table cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Nome da Atividade</th>
+                    <th>Nota</th>
+                    <th>Aprovado?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Atividade 1</td>
+                    <td>7</td>
+                    <td><img src="images/aprovado.png" alt="Emoji Festejando de Alegria"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Media Final</td>
+                    <td>7</td>
+                    <td><span class="resultado aprovado">Aprovado</span></td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
-
-
-    <script src="main.js"></script>
 </body>
 
 </html>
